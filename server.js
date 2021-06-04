@@ -2,6 +2,7 @@
 
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 // const router = express.Router()
 
 /*============ CONFIGURATION =============*/
@@ -17,12 +18,11 @@ const MONGODB_URI = process.env.MONGODB_URI
 //Use this middleware to return JSON data, rather than res.send/urlencoded which returns HTML:
 const momsController = require('./controllers/moms_controller.js')
 app.use(express.static('public'))
-app.use(express.json())
+app.use(express.json()) // use .json(), not .urlencoded()
+app.use(cors())
 app.use('/moms', momsController)
 
-// app.get('/', (req, res) =>{
-//    res.send('hello wold')
-// })
+
 
 /*============== LISTENER ================*/
 app.listen (PORT, ()=>{
