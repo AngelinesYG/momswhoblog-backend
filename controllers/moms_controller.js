@@ -17,6 +17,7 @@ const moms = express.Router()
 ///HOME/////
 moms.get('/', (req, res)=>{
    Moms.find({}, (err, foundMoms) =>{
+      console.log(foundMoms)
       res.json(foundMoms)
       });
    })
