@@ -1,9 +1,9 @@
 const express = require('express')
+const moms = express.Router()
 const Moms = require('../models/moms.js')
 const momsSeed = require('../models/moms_seed.js')
 // const qaSeed = require ('./models/qaSeed.js')
 // const qa = require ('../models/qa.js')
-const moms = express.Router()
 // const session = require('express-session')
 
 // const isAuthenticated = (req, res, next)=>{
