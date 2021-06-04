@@ -3,7 +3,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-// const router = express.Router()
+const bodyParser = require('body-parser')
+//const session = require('express-session')
+
 
 /*============ CONFIGURATION =============*/
 
@@ -20,6 +22,8 @@ const momsController = require('./controllers/moms_controller.js')
 app.use(express.static('public'))
 app.use(express.json()) // use .json(), not .urlencoded()
 app.use(cors())
+// app.use(bodyParser.json())
+// app.use(bodyParser.urlencoded())
 app.use('/moms', momsController)
 
 
