@@ -1,6 +1,6 @@
 const express = require('express')
-const Moms = require('../models/moms.js')
-const momsSeed = require('../models/moms_seed.js')
+const Moms = require('./models/moms.js')
+const momsSeed = require('./models/moms_seed.js')
 // const qaSeed = require ('./models/qaSeed.js')
 // const qa = require ('../models/qa.js')
 const moms = express.Router()
