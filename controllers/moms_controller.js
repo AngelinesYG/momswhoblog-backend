@@ -19,9 +19,6 @@ moms.get('/', (req, res)=>{
    Moms.find({}, (err, foundMoms) =>{
       res.json(foundMoms)
       });
-      catch(err) {
-         next(err);
-      }
    })
 
 
