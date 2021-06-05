@@ -25,7 +25,7 @@ moms.get('/', (req, res)=>{
 
 ////CREATE/////(create and posts new blog)
 moms.post('/', (req, res)=>{
-   moms.create(req.body, (err, createMoms)=>{
+   Moms.create(req.body, (err, createMoms)=>{
       Moms.find({}, (err, foundMoms) =>{
          res.json(foundMoms)
       })
