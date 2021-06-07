@@ -2,9 +2,11 @@
 
 const express = require('express')
 const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+// const cookieParser = require('cookie-parser')
 const cors = require('cors')
 // const bodyParser = require('body-parser')
-//const session = require('express-session')
+// const session = require('express-session')
 
 
 /*============ CONFIGURATION =============*/
@@ -21,10 +23,12 @@ const MONGODB_URI = process.env.MONGODB_URI
 const momsController = require('./controllers/moms_controller.js')
 app.use(express.static('public'))
 app.use(express.json()) // use .json(), not .urlencoded()
+// app.use(cookieParser())
 app.use(cors())
 // app.use(bodyParser.json())
 // app.use(bodyParser.urlencoded())
 app.use('/moms', momsController)
+// app.use('/signup', require('./controllers/userController'))
 
 
 
