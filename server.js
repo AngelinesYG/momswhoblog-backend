@@ -13,7 +13,7 @@ const cors = require('cors')
 
 const app = express()
 require('dotenv').config()
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3001
 const MONGODB_URI = process.env.MONGODB_URI
 
 
@@ -28,7 +28,7 @@ app.use(cors())
 // app.use(bodyParser.json())
 // app.use(bodyParser.urlencoded())
 app.use('/moms', momsController)
-// app.use('/signup', require('./controllers/userController'))
+app.use('/signup', require('./controllers/userController'))
 
 
 

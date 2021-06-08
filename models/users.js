@@ -13,7 +13,6 @@ const userSchema = new Schema(
               bio: String,
               minlength: 6,
               momfriends: [{type: Schema.Types.ObjectId, ref:"username"}],
-              blogs:[{type: Schema.Types.ObjectId, ref: "Blog"}]
            },
    },
       {timestamps: true}
