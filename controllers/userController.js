@@ -8,11 +8,15 @@ const User = require('../models/users.js')
 //======CREATE======//
 users.post('/', (req, res) =>{
    let newUser = {
+      firstName: req.body.firstName,
+      email: req.body.email,
       username: req.body.username,
       password: bcrypt.hashSync(
          req.body.password, bcrypt.genSaltSync(10))
    }
+   console.log(newUser)
    User.create(newUser, (err, createdUser)=>{
+      if (err){ res.json(err)}
       res.json(createdUser)
    })
 })

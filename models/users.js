@@ -4,6 +4,12 @@ const Schema = mongoose.Schema
 
 const userSchema = new Schema(
    {
+   firstName:{type: String,
+               required: true
+             },
+   email:    {type: String,
+              required: true
+             },
    username: {type: String,
               unique: true,
               required: true
@@ -13,7 +19,7 @@ const userSchema = new Schema(
               bio: String,
               minlength: 6,
               momfriends: [{type: Schema.Types.ObjectId, ref:"username"}],
-           },
+             },
    },
       {timestamps: true}
 );
